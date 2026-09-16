@@ -9,7 +9,15 @@
       <label for="username">Username</label>
       <input id="username" name="username" required autocomplete="username" />
       <label for="password">Password</label>
-      <input id="password" name="password" type="password" required autocomplete="current-password" />
+      <div class="password-field">
+        <input id="password" name="password" type="password" required autocomplete="current-password" />
+        <button type="button" class="password-toggle" data-password-toggle aria-label="Show password" aria-pressed="false">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z" />
+            <circle cx="12" cy="12" r="3" />
+          </svg>
+        </button>
+      </div>
       <div class="actions">
         <button class="btn btn-primary" type="submit">Log in</button>
       </div>
@@ -17,4 +25,7 @@
     <p class="hint">New here? <a href="{{ url_for('register') }}">Create an account</a></p>
   </div>
 </main>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/password-toggle.js') }}?v=3"></script>
 {% endblock %}
