@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block title %}Expenses — Expense Tracker{% endblock %}
+{% block content %}
+<main class="shell">
+  <div class="page-head">
+    <div>
+      <h1>Overview</h1>
+      <p class="sub" style="margin:0">Filter, review, edit, or delete your expenses.</p>
+    </div>
+    <a class="btn btn-primary" href="{{ url_for('add_expense') }}">Add expense</a>
+  </div>
+
+  <div class="stats">
+    <div class="stat stat-main">
+      <div class="label">Filtered total</div>
+      <div class="value">₹ {{ "%.2f"|format(filtered_total) }}</div>
+    </div>
+    <div class="stat stat-side">
+      <div class="label">This month</div>
+      <div class="value">₹ {{ "%.2f"|format(month_total) }}</div>
+    </div>
+  </div>
+
+  <div class="panel" style="margin-bottom:0.85rem;padding-bottom:1rem">
+    <form class="filters" method="get" action="{{ url_for('expenses') }}">
+      <div class="field">
+        <label for="from">From</label>
+        <input id="from" name="from" type="date" value="{{ filters.from }}" />
+      </div>
+      <div class="field">
+        <label for="to">To</label>
+        <input id="to" name="to" type="date" value="{{ filters.to }}" />
+      </div>
+      <div class="field">
+        <label for="category">Category</label>
+        <select id="category" name="category">
+          <option value="All" {% if filters.category == 'All' %}selected{% endif %}>All</option>
+          {% for cat in categories %}
+            <option value="{{ cat }}" {% if filters.category == cat %}selected{% endif %}>{{ cat }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <button class="btn btn-primary" type="submit">Apply</button>
+      <a class="btn btn-ghost" href="{{ url_for('expenses') }}">Reset</a>
+    </form>
+  </div>
+
+  <div class="panel" style="padding:0;overflow:hidden">
+    <div class="table-wrap">
+      {% if expenses %}
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Category</th>
+            <th class="hide-sm">Note</th>
+            <th class="num">Amount</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for e in expenses %}
+          <tr>
+            <td>{{ e.expense_date }}</td>
+            <td><span class="badge">{{ e.category }}</span></td>
+            <td class="hide-sm">{{ e.note or "—" }}</td>
+            <td class="num">{{ "%.2f"|format(e.amount) }}</td>
+            <td class="ops">
+              <a href="{{ url_for('edit_expense', expense_id=e.id) }}">Edit</a>
+              <form method="post" action="{{ url_for('delete_expense', expense_id=e.id) }}" style="display:inline" onsubmit="return confirm('Delete this expense?');">
+                <button type="submit">Delete</button>
+              </form>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+        <p class="empty">No expenses yet. Add one to get started.</p>
+      {% endif %}
+    </div>
+  </div>
+</main>
+{% endblock %}

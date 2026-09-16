@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+expense_tracker.db
+.debug/
+debug-*.log
+
+_py_err.txt
+_py_out.txt

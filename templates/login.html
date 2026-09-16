@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Log in — Expense Tracker{% endblock %}
+{% block content %}
+<main class="auth-shell">
+  <div class="panel">
+    <h1>Welcome back</h1>
+    <p class="sub">Log in to manage your spending.</p>
+    <form method="post" action="{{ url_for('login') }}">
+      <label for="username">Username</label>
+      <input id="username" name="username" required autocomplete="username" />
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" required autocomplete="current-password" />
+      <div class="actions">
+        <button class="btn btn-primary" type="submit">Log in</button>
+      </div>
+    </form>
+    <p class="hint">New here? <a href="{{ url_for('register') }}">Create an account</a></p>
+  </div>
+</main>
+{% endblock %}

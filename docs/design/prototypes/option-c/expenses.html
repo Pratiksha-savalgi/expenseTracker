@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Option C — Expenses</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="demo-banner">Option C · Compact Table · Prototype</div>
+  <header class="top">
+    <a class="brand" href="../index.html">Expense Tracker</a>
+    <nav class="nav-links">
+      <span style="color:var(--muted);font-weight:600">alex</span>
+      <a href="login.html">Log out</a>
+    </nav>
+  </header>
+  <main class="shell">
+    <div class="bar">
+      <div>
+        <h1>Expenses</h1>
+        <p class="sub" style="margin:0">List, filter, edit, delete</p>
+      </div>
+      <a class="btn btn-primary" href="expense-form.html">+ Add</a>
+    </div>
+
+    <form class="filters" action="#" method="get">
+      <div class="field">
+        <label for="from">From</label>
+        <input id="from" type="date" value="2026-09-01" />
+      </div>
+      <div class="field">
+        <label for="to">To</label>
+        <input id="to" type="date" value="2026-09-16" />
+      </div>
+      <div class="field">
+        <label for="category">Category</label>
+        <select id="category">
+          <option>All</option>
+          <option selected>Food</option>
+          <option>Transport</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <button class="btn btn-primary" type="submit">Filter</button>
+      <a class="btn btn-ghost" href="expenses.html">Reset</a>
+    </form>
+
+    <div class="bar">
+      <div class="totals">
+        <div><span>Filtered</span> <strong>₹ 1,240</strong></div>
+        <div><span>This month</span> <strong>₹ 3,890</strong></div>
+      </div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Category</th>
+          <th class="hide-sm">Note</th>
+          <th class="num">Amount</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>16 Sep 2026</td>
+          <td>Food</td>
+          <td class="hide-sm">Lunch with friends</td>
+          <td class="num">450.00</td>
+          <td class="ops">
+            <a href="expense-form.html">Edit</a>
+            <button type="button">Delete</button>
+          </td>
+        </tr>
+        <tr>
+          <td>14 Sep 2026</td>
+          <td>Food</td>
+          <td class="hide-sm">Groceries</td>
+          <td class="num">620.00</td>
+          <td class="ops">
+            <a href="expense-form.html">Edit</a>
+            <button type="button">Delete</button>
+          </td>
+        </tr>
+        <tr>
+          <td>10 Sep 2026</td>
+          <td>Food</td>
+          <td class="hide-sm">Coffee</td>
+          <td class="num">170.00</td>
+          <td class="ops">
+            <a href="expense-form.html">Edit</a>
+            <button type="button">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="hint"><a href="../index.html">← Back to all design options</a></p>
+  </main>
+</body>
+</html>

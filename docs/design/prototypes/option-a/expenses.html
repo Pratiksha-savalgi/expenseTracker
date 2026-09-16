@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Option A — Expenses</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="demo-banner">Option A · Clean List · Prototype</div>
+  <header class="top">
+    <a class="brand" href="../index.html">Expense Tracker</a>
+    <nav class="nav-links">
+      <span style="color:var(--muted);font-weight:600">Hi, alex</span>
+      <a href="login.html">Log out</a>
+    </nav>
+  </header>
+  <main class="shell">
+    <div class="summary">
+      <div>
+        <h1>My expenses</h1>
+        <p class="sub" style="margin-bottom:0">Filter, review, edit, or delete.</p>
+      </div>
+      <a class="btn btn-primary" href="expense-form.html">+ Add expense</a>
+    </div>
+
+    <div class="card" style="margin-bottom:1rem">
+      <form class="toolbar" action="#" method="get">
+        <div class="field">
+          <label for="from">From</label>
+          <input id="from" type="date" value="2026-09-01" />
+        </div>
+        <div class="field">
+          <label for="to">To</label>
+          <input id="to" type="date" value="2026-09-16" />
+        </div>
+        <div class="field">
+          <label for="category">Category</label>
+          <select id="category">
+            <option>All</option>
+            <option selected>Food</option>
+            <option>Transport</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Filter</button>
+        <a class="btn btn-ghost" href="expenses.html">Clear</a>
+      </form>
+    </div>
+
+    <div class="card">
+      <div class="summary" style="margin-bottom:0.25rem">
+        <span class="meta">Showing 3 expenses</span>
+        <span class="total">Total: ₹ 1,240</span>
+      </div>
+      <ul class="list">
+        <li class="item">
+          <div class="item-main">
+            <span class="cat">Food</span>
+            <span class="meta">16 Sep 2026 · Lunch with friends</span>
+          </div>
+          <div class="amount">₹ 450</div>
+          <div class="item-actions">
+            <a href="expense-form.html">Edit</a>
+            <button type="button">Delete</button>
+          </div>
+        </li>
+        <li class="item">
+          <div class="item-main">
+            <span class="cat">Food</span>
+            <span class="meta">14 Sep 2026 · Groceries</span>
+          </div>
+          <div class="amount">₹ 620</div>
+          <div class="item-actions">
+            <a href="expense-form.html">Edit</a>
+            <button type="button">Delete</button>
+          </div>
+        </li>
+        <li class="item">
+          <div class="item-main">
+            <span class="cat">Food</span>
+            <span class="meta">10 Sep 2026 · Coffee</span>
+          </div>
+          <div class="amount">₹ 170</div>
+          <div class="item-actions">
+            <a href="expense-form.html">Edit</a>
+            <button type="button">Delete</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <p class="hint"><a href="../index.html">← Back to all design options</a></p>
+  </main>
+</body>
+</html>

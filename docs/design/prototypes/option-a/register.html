@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Option A — Register</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="demo-banner">Option A · Clean List · Prototype</div>
+  <header class="top">
+    <a class="brand" href="../index.html">Expense Tracker</a>
+    <nav class="nav-links"><a href="login.html">Log in</a></nav>
+  </header>
+  <main class="auth-shell">
+    <div class="card">
+      <h1>Create account</h1>
+      <p class="sub">One account. Your expenses stay private.</p>
+      <form action="login.html" method="get">
+        <label for="username">Username</label>
+        <input id="username" name="username" placeholder="e.g. alex" />
+        <label for="password">Password</label>
+        <input id="password" type="password" name="password" />
+        <label for="confirm">Confirm password</label>
+        <input id="confirm" type="password" name="confirm" />
+        <div class="actions">
+          <button class="btn btn-primary" type="submit">Register</button>
+          <a class="btn btn-ghost" href="login.html">Back to login</a>
+        </div>
+      </form>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Option B — Expenses</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="demo-banner">Option B · Soft Panel · Prototype</div>
+  <header class="top">
+    <a class="brand" href="../index.html">Expense Tracker</a>
+    <nav class="nav-links">
+      <span style="color:var(--muted);font-weight:600">alex</span>
+      <a href="login.html">Log out</a>
+    </nav>
+  </header>
+  <main class="shell">
+    <div class="page-head">
+      <div>
+        <h1>Overview</h1>
+        <p class="sub" style="margin:0">Your expenses at a glance</p>
+      </div>
+      <a class="btn btn-primary" href="expense-form.html">Add expense</a>
+    </div>
+
+    <div class="stats">
+      <div class="stat stat-main">
+        <div class="label">Filtered total</div>
+        <div class="value">₹ 1,240</div>
+      </div>
+      <div class="stat stat-side">
+        <div class="label">This month</div>
+        <div class="value">₹ 3,890</div>
+      </div>
+    </div>
+
+    <div class="panel" style="margin-bottom:0.85rem">
+      <form class="filters" action="#" method="get">
+        <div class="field">
+          <label for="from">From</label>
+          <input id="from" type="date" value="2026-09-01" />
+        </div>
+        <div class="field">
+          <label for="to">To</label>
+          <input id="to" type="date" value="2026-09-16" />
+        </div>
+        <div class="field">
+          <label for="category">Category</label>
+          <select id="category">
+            <option>All</option>
+            <option selected>Food</option>
+            <option>Transport</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Apply</button>
+      </form>
+    </div>
+
+    <div class="panel">
+      <div class="expense">
+        <div>
+          <span class="badge">Food</span>
+          <div class="note-text">Lunch with friends</div>
+          <div class="meta">16 Sep 2026</div>
+        </div>
+        <div class="right">
+          <div class="amount">₹ 450</div>
+          <div class="links">
+            <a href="expense-form.html">Edit</a>
+            <button type="button">Delete</button>
+          </div>
+        </div>
+      </div>
+      <div class="expense">
+        <div>
+          <span class="badge">Food</span>
+          <div class="note-text">Groceries</div>
+          <div class="meta">14 Sep 2026</div>
+        </div>
+        <div class="right">
+          <div class="amount">₹ 620</div>
+          <div class="links">
+            <a href="expense-form.html">Edit</a>
+            <button type="button">Delete</button>
+          </div>
+        </div>
+      </div>
+      <div class="expense">
+        <div>
+          <span class="badge">Food</span>
+          <div class="note-text">Coffee</div>
+          <div class="meta">10 Sep 2026</div>
+        </div>
+        <div class="right">
+          <div class="amount">₹ 170</div>
+          <div class="links">
+            <a href="expense-form.html">Edit</a>
+            <button type="button">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="hint"><a href="../index.html">← Back to all design options</a></p>
+  </main>
+</body>
+</html>

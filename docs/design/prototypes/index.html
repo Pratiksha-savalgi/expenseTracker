@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Expense Tracker — Choose a design</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #eef2ef;
+      --ink: #1c2420;
+      --muted: #5a675f;
+      --card: #ffffff;
+      --line: #d5ddd7;
+      --a: #2f6f4e;
+      --b: #3d5a80;
+      --c: #0f766e;
+      --bc: #0f766e;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Nunito", system-ui, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse 80% 50% at 10% 0%, #d9ebe0 0%, transparent 55%),
+        radial-gradient(ellipse 60% 40% at 100% 10%, #d6e4f0 0%, transparent 50%),
+        var(--bg);
+      padding: 2.5rem 1.25rem 3rem;
+    }
+    .wrap { max-width: 920px; margin: 0 auto; }
+    h1 {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      margin: 0 0 0.4rem;
+      font-weight: 600;
+    }
+    .lead { color: var(--muted); margin: 0 0 1.5rem; max-width: 38rem; line-height: 1.5; }
+    .featured {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: var(--card);
+      border: 2px solid #0f766e;
+      border-radius: 14px;
+      padding: 1.35rem 1.4rem 1.5rem;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 10px 28px rgba(15, 118, 110, 0.1);
+    }
+    .featured:hover { transform: translateY(-1px); }
+    .grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+    a.card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 1.15rem 1.25rem;
+      opacity: 0.92;
+    }
+    .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 0.55rem;
+    }
+    .tag-a { color: var(--a); }
+    .tag-b { color: var(--b); }
+    .tag-c { color: var(--c); }
+    .tag-bc { color: var(--bc); }
+    h2 { margin: 0 0 0.45rem; font-size: 1.2rem; }
+    p { margin: 0; color: var(--muted); font-size: 0.95rem; line-height: 1.45; }
+    .swatches { display: flex; gap: 0.35rem; margin: 0.85rem 0 0.75rem; }
+    .swatches span {
+      width: 1.1rem; height: 1.1rem; border-radius: 999px;
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+    .cta { font-weight: 700; font-size: 0.9rem; margin-top: 0.85rem; color: var(--bc); }
+    .note {
+      margin-top: 2rem;
+      padding: 1rem 1.15rem;
+      border-left: 3px solid var(--bc);
+      background: rgba(255,255,255,0.65);
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .muted-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      margin: 0 0 0.75rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Pick a look</h1>
+    <p class="lead">
+      Start with the <strong>B+C combined</strong> prototype (soft panels + table).
+      Older A / B / C options are still below for comparison.
+    </p>
+
+    <a class="featured" href="option-bc/login.html">
+      <div class="tag tag-bc">Recommended · B + C</div>
+      <h2>Soft Panel + Compact Table</h2>
+      <div class="swatches">
+        <span style="background:#e8eef5"></span>
+        <span style="background:#3d5a80"></span>
+        <span style="background:#0f766e"></span>
+        <span style="background:#f7f4ef"></span>
+      </div>
+      <p>
+        From <strong>B</strong>: rounded nav, soft panels, big total cards.
+        From <strong>C</strong>: spreadsheet-style expense table and teal accents.
+      </p>
+      <div class="cta">Open combined prototype →</div>
+    </a>
+
+    <p class="muted-title">Original options</p>
+    <div class="grid">
+      <a class="card" href="option-a/login.html">
+        <div class="tag tag-a">Option A</div>
+        <h2>Clean List</h2>
+        <p>Light + green, simple rows.</p>
+      </a>
+      <a class="card" href="option-b/login.html">
+        <div class="tag tag-b">Option B</div>
+        <h2>Soft Panel</h2>
+        <p>Blue-gray panels and summary cards.</p>
+      </a>
+      <a class="card" href="option-c/login.html">
+        <div class="tag tag-c">Option C</div>
+        <h2>Compact Table</h2>
+        <p>Teal + dense table layout.</p>
+      </a>
+    </div>
+
+    <p class="note">
+      Open with <strong>open-design-prototypes.bat</strong> (not Cursor path links).
+      Tell me if B+C looks good, or what to tweak.
+    </p>
+  </div>
+</body>
+</html>
